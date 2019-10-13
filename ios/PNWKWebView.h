@@ -8,9 +8,12 @@
 #import <React/RCTView.h>
 #import <React/RCTDefines.h>
 #import <WebKit/WebKit.h>
+#import "RNCWebView.h"
 
 @class PNWKWebView;
 
 @interface PNWKWebView : WKWebView
+
+@property (nonatomic, copy) RCTDirectEventBlock onHighlight;
 
 @end
