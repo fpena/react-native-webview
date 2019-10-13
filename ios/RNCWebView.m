@@ -10,6 +10,7 @@
 #import <React/RCTAutoInsetsProtocol.h>
 #import "RNCWKProcessPoolManager.h"
 #import <UIKit/UIKit.h>
+#import "PNWKWebView.h"
 
 #import "objc/runtime.h"
 
@@ -49,7 +50,7 @@ static NSDictionary* customCertificatesForHost;
 @property (nonatomic, copy) RCTDirectEventBlock onMessage;
 @property (nonatomic, copy) RCTDirectEventBlock onScroll;
 @property (nonatomic, copy) RCTDirectEventBlock onContentProcessDidTerminate;
-@property (nonatomic, copy) WKWebView *webView;
+@property (nonatomic, copy) PNWKWebView *webView;
 @end
 
 @implementation RNCWebView
@@ -243,7 +244,7 @@ static NSDictionary* customCertificatesForHost;
       }
     }
 
-    _webView = [[WKWebView alloc] initWithFrame:self.bounds configuration: wkWebViewConfig];
+    _webView = [[PNWKWebView alloc] initWithFrame:self.bounds configuration: wkWebViewConfig];
     [self setBackgroundColor: _savedBackgroundColor];
     _webView.scrollView.delegate = self;
     _webView.UIDelegate = self;
